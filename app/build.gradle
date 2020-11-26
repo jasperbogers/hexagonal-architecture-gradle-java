@@ -1,0 +1,18 @@
+dependencies {
+    implementation project(':core')
+    implementation project(':adapter-input-handler')
+    implementation project(':adapter-persistence')
+
+    testImplementation 'com.tngtech.archunit:archunit-junit5:0.14.1'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+apply plugin: 'application'
+
+application {
+    // Define the main class for the application.
+    mainClass = 'com.jdriven.app.App'
+}
