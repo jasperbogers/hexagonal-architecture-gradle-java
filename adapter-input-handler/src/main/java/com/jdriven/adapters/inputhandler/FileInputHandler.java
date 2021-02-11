@@ -82,7 +82,7 @@ public class FileInputHandler {
             return;
         }
 
-        logger.info("Sending input to interpreter.");
+        logger.info("Sending input to our magic business logic port to interpret.");
         try {
             magicBusinessLogicPort.interpretData(data.toCoreData());
         } catch (IllegalArgumentException e) {
