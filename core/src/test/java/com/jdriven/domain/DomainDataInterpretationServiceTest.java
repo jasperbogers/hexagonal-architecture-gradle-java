@@ -2,7 +2,7 @@ package com.jdriven.domain;
 
 import com.jdriven.domain.models.DomainData;
 import com.jdriven.domain.ports.PersistencePort;
-import com.jdriven.domain.services.DomainDataInterpretationService;
+import com.jdriven.domain.services.MagicBusinessLogicService;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -33,7 +33,7 @@ public class DomainDataInterpretationServiceTest {
         inputData.field1 = "whatever";
         inputData.field2 = "something not null";
 
-        DomainDataInterpretationService coreDataInterpreter = new DomainDataInterpretationService(persistencePort);
+        MagicBusinessLogicService coreDataInterpreter = new MagicBusinessLogicService(persistencePort);
         Assertions.assertDoesNotThrow(() -> coreDataInterpreter.interpretData(inputData));
     }
 
@@ -43,7 +43,7 @@ public class DomainDataInterpretationServiceTest {
         inputData.field1 = "whatever";
         inputData.field2 = null;
 
-        DomainDataInterpretationService coreDataInterpreter = new DomainDataInterpretationService(persistencePort);
+        MagicBusinessLogicService coreDataInterpreter = new MagicBusinessLogicService(persistencePort);
         Assertions.assertThrows(IllegalArgumentException.class, () -> coreDataInterpreter.interpretData(inputData));
     }
 }

@@ -2,8 +2,8 @@ package com.jdriven.app;
 
 import com.jdriven.adapters.inputhandler.FileInputHandler;
 import com.jdriven.adapters.persistence.SystemOutPersistence;
-import com.jdriven.domain.services.DomainDataInterpretationService;
-import com.jdriven.domain.ports.DataInterpretationPort;
+import com.jdriven.domain.services.MagicBusinessLogicService;
+import com.jdriven.domain.ports.MagicBusinessLogicPort;
 import com.jdriven.domain.ports.PersistencePort;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -23,8 +23,8 @@ public class App {
           Inject dependencies
          */
         PersistencePort persistencePort = new SystemOutPersistence();
-        DataInterpretationPort dataInterpretationPort = new DomainDataInterpretationService(persistencePort);
-        FileInputHandler fileInputHandler = new FileInputHandler(dataInterpretationPort);
+        MagicBusinessLogicPort magicBusinessLogicPort = new MagicBusinessLogicService(persistencePort);
+        FileInputHandler fileInputHandler = new FileInputHandler(magicBusinessLogicPort);
 
         /*
           Initiate input

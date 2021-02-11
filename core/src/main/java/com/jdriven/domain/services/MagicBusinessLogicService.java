@@ -1,21 +1,21 @@
 package com.jdriven.domain.services;
 
 import com.jdriven.domain.models.DomainData;
-import com.jdriven.domain.ports.DataInterpretationPort;
+import com.jdriven.domain.ports.MagicBusinessLogicPort;
 import com.jdriven.domain.ports.PersistencePort;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * Core object for interpreting data according to internal domain logic.
+ * Service that handles the magic business logic that is at the core of this application.
  */
-public class DomainDataInterpretationService implements DataInterpretationPort {
+public class MagicBusinessLogicService implements MagicBusinessLogicPort {
 
-    private static final Logger logger = LoggerFactory.getLogger(DomainDataInterpretationService.class);
+    private static final Logger logger = LoggerFactory.getLogger(MagicBusinessLogicService.class);
 
     private final PersistencePort persistencePort;
 
-    public DomainDataInterpretationService(PersistencePort persistencePort) {
+    public MagicBusinessLogicService(PersistencePort persistencePort) {
         this.persistencePort = persistencePort;
     }
 

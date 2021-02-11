@@ -6,16 +6,16 @@ subprojects {
     apply plugin: 'java'
 
     repositories {
-        jcenter()
+        mavenCentral()
     }
 
     compileJava {
         sourceCompatibility = 14
         targetCompatibility = 14
     }
-    dependencies {
-        implementation group: 'org.slf4j', name: 'slf4j-api', version: '1.7.30'
-        implementation group: 'ch.qos.logback', name: 'logback-classic', version:  '1.2.3'
 
+    dependencies {
+        implementation 'org.slf4j:slf4j-api:1.7.30'
+        implementation 'ch.qos.logback:logback-classic:1.2.3'
     }
 }

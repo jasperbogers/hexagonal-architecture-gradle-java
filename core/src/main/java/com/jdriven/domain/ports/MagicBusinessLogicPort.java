@@ -5,7 +5,7 @@ import com.jdriven.domain.models.DomainData;
 /**
  * Object for interpreting core data
  */
-public interface DataInterpretationPort {
+public interface MagicBusinessLogicPort {
     void interpretData(DomainData inputData);
 }
 
