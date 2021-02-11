@@ -23,6 +23,9 @@ class CleanArchitectureValidationTest {
     private static final String ADAPTER_LAYER = "adapter";
     private static final String BOOTSTRAP_LAYER = "bootstrap";
 
+    /**
+     * TODO We should also forbid adapters from calling each other!
+     */
     @ArchTest
     static final ArchRule adheresToCleanArchitecture = layeredArchitecture()
             .layer(DOMAIN_MODEL_LAYER).definedBy(domainModelPackages)
@@ -35,5 +38,5 @@ class CleanArchitectureValidationTest {
             .whereLayer(DOMAIN_MODEL_LAYER).mayOnlyBeAccessedByLayers(ADAPTER_LAYER, DOMAIN_SERVICE_LAYER, PORT_LAYER)
             .whereLayer(DOMAIN_SERVICE_LAYER).mayOnlyBeAccessedByLayers(BOOTSTRAP_LAYER)
             .whereLayer(PORT_LAYER).mayOnlyBeAccessedByLayers(BOOTSTRAP_LAYER, ADAPTER_LAYER, DOMAIN_SERVICE_LAYER)
-            .as("In hexagonal architecture, dependencies should point inward.");
+            .because("In hexagonal architecture, dependencies should point inward.");
 }
