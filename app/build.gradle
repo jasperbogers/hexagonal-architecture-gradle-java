@@ -1,3 +1,8 @@
+plugins {
+    id "shared-config"
+    id "application"
+}
+
 dependencies {
     implementation project(':core')
     implementation project(':adapter-input-handler')
@@ -9,8 +14,6 @@ dependencies {
 test {
     useJUnitPlatform()
 }
-
-apply plugin: 'application'
 
 application {
     // Define the main class for the application.
