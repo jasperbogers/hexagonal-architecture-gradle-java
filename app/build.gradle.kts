@@ -8,7 +8,7 @@ dependencies {
     implementation(project(":adapter-input-handler"))
     implementation(project(":adapter-persistence"))
 
-    testImplementation("com.tngtech.archunit:archunit-junit5:0.14.1")
+    testImplementation("com.tngtech.archunit:archunit-junit5:0.16.0")
 }
 
 tasks.test {
