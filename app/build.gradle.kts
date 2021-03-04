@@ -16,6 +16,8 @@ tasks.test {
 }
 
 application {
+    // Define module
+    mainModule.set("hex.basic.app")
     // Define the main class for the application.
     mainClass.set("com.jdriven.app.App")
 }
