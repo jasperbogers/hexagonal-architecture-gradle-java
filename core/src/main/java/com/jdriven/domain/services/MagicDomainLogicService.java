@@ -1,7 +1,7 @@
 package com.jdriven.domain.services;
 
 import com.jdriven.domain.models.DomainData;
-import com.jdriven.domain.ports.MagicBusinessLogicPort;
+import com.jdriven.domain.ports.MagicDomainLogicPort;
 import com.jdriven.domain.ports.PersistencePort;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -9,13 +9,13 @@ import org.slf4j.LoggerFactory;
 /**
  * Service that handles the magic business logic that is at the core of this application.
  */
-public class MagicBusinessLogicService implements MagicBusinessLogicPort {
+public class MagicDomainLogicService implements MagicDomainLogicPort {
 
-    private static final Logger logger = LoggerFactory.getLogger(MagicBusinessLogicService.class);
+    private static final Logger logger = LoggerFactory.getLogger(MagicDomainLogicService.class);
 
     private final PersistencePort persistencePort;
 
-    public MagicBusinessLogicService(PersistencePort persistencePort) {
+    public MagicDomainLogicService(PersistencePort persistencePort) {
         this.persistencePort = persistencePort;
     }
 

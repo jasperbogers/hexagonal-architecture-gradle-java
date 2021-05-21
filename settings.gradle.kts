@@ -1,6 +1,6 @@
 rootProject.name = "hex-basic"
 
-include("app")
+include("application")
 include("core")
 include("adapter-input-handler")
 include("adapter-persistence")

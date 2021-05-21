@@ -1,9 +1,9 @@
-package com.jdriven.app;
+package com.jdriven.application;
 
 import com.jdriven.adapters.inputhandler.FileInputHandler;
 import com.jdriven.adapters.persistence.SystemOutPersistence;
-import com.jdriven.domain.services.MagicBusinessLogicService;
-import com.jdriven.domain.ports.MagicBusinessLogicPort;
+import com.jdriven.domain.services.MagicDomainLogicService;
+import com.jdriven.domain.ports.MagicDomainLogicPort;
 import com.jdriven.domain.ports.PersistencePort;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -11,9 +11,9 @@ import org.slf4j.LoggerFactory;
 /**
  * Main application.
  */
-public class App {
+public class Application {
 
-    private static final Logger logger = LoggerFactory.getLogger(App.class);
+    private static final Logger logger = LoggerFactory.getLogger(Application.class);
 
     public static void main(String[] args) {
 
@@ -23,8 +23,8 @@ public class App {
           Inject dependencies
          */
         PersistencePort persistencePort = new SystemOutPersistence();
-        MagicBusinessLogicPort magicBusinessLogicPort = new MagicBusinessLogicService(persistencePort);
-        FileInputHandler fileInputHandler = new FileInputHandler(magicBusinessLogicPort);
+        MagicDomainLogicPort magicDomainLogicPort = new MagicDomainLogicService(persistencePort);
+        FileInputHandler fileInputHandler = new FileInputHandler(magicDomainLogicPort);
 
         /*
           Initiate input

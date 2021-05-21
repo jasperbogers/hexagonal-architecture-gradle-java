@@ -17,5 +17,5 @@ tasks.test {
 
 application {
     // Define the main class for the application.
-    mainClass.set("com.jdriven.app.App")
+    mainClass.set("com.jdriven.application.Application")
 }

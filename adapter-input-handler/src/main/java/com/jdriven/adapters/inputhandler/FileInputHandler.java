@@ -1,7 +1,7 @@
 package com.jdriven.adapters.inputhandler;
 
 import com.jdriven.domain.models.DomainData;
-import com.jdriven.domain.ports.MagicBusinessLogicPort;
+import com.jdriven.domain.ports.MagicDomainLogicPort;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -17,10 +17,10 @@ public class FileInputHandler {
 
     private static final Logger logger = LoggerFactory.getLogger(FileInputHandler.class);
 
-    private final MagicBusinessLogicPort magicBusinessLogicPort;
+    private final MagicDomainLogicPort magicDomainLogicPort;
 
-    public FileInputHandler(MagicBusinessLogicPort magicBusinessLogicPort) {
-        this.magicBusinessLogicPort = magicBusinessLogicPort;
+    public FileInputHandler(MagicDomainLogicPort magicDomainLogicPort) {
+        this.magicDomainLogicPort = magicDomainLogicPort;
     }
 
     /**
@@ -84,7 +84,7 @@ public class FileInputHandler {
 
         logger.info("Sending input to our magic business logic port to interpret.");
         try {
-            magicBusinessLogicPort.interpretData(data.toCoreData());
+            magicDomainLogicPort.interpretData(data.toCoreData());
         } catch (IllegalArgumentException e) {
             // TODO Questionable if handling this kind of exception in any more depth is desirable in a domain agnostic adapter
             logger.warn("Interpreter rejected the data.");
