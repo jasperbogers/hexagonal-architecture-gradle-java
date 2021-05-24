@@ -15,7 +15,7 @@ class CleanArchitectureValidationTest {
     private static final String[] domainPortsPackages = {"..domain.ports"};
     private static final String[] domainServicePackages = {"..domain.services"};
     private static final String[] adapterPackages = {"..adapters.."};
-    private static final String[] bootstrapPackages = {"..app"};
+    private static final String[] bootstrapPackages = {"..application"};
 
     private static final String DOMAIN_MODEL_LAYER = "domain model";
     private static final String DOMAIN_SERVICE_LAYER = "domain service";
