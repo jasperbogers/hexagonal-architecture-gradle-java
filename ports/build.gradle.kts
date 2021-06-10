@@ -3,7 +3,6 @@ plugins {
 }
 
 dependencies {
-    implementation(project(":ports"))
     testImplementation("org.junit.jupiter:junit-jupiter-engine:5.7.0")
 }
 
