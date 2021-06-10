@@ -5,6 +5,7 @@ plugins {
 
 dependencies {
     implementation(project(":core"))
+    implementation(project(":ports"))
     implementation(project(":adapter-input-handler"))
     implementation(project(":adapter-persistence"))
 
