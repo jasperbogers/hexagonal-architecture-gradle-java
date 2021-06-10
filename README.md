@@ -1,12 +1,13 @@
 # hexagonal-architecture-gradle-java
 An exploration of implementing hexagonal architecture in a simple Java application using Gradle to enforce dependencies.
 
-Using Gradle, the application is divided into 4 parts, that can only 'see' the classes that they're allowed to see.
+Using Gradle, the application is divided into 5 parts, that can only 'see' the classes that they're allowed to see.
 
-- Application creates the application and injects the right dependencies.
-- Core contains the domain logic and ports without knowing anything about 'the outside world'.
+- "Core" contains the domain logic without knowing anything about 'the outside world'.
+- "Ports" contains the ports and data objects required for the outside world and domain logic to interact with each other.
 - There's a driving adapter that responds to the outside world providing input.
 - There's a driven adapter that can be instructed to store something in the outside world.
+- "Application" creates the application and injects the right dependencies.
 
 Everything is written with a minimal amount of frameworks.
 So no Spring, Jackson, Mockito, database, etc.
